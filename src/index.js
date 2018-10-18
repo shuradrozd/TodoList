@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 
 
 const TodoList = () => {
+    const items = ['Learn React', 'Build Awesome App'];
     return (
         <ul>
-            <li>Learn React</li>
-            <li>Build Awesome App</li>
+            <li>{ items[0] }</li>
+            <li>{ items[1] }</li>
         </ul>
     );
 };
@@ -23,13 +24,15 @@ const SearchPanel = () => {
     );
 };
 
-const el = (
-    <div>
-        <AppHeader/>
-        <SearchPanel/>
-        <TodoList />
-    </div>
-);
+const App = () => {
+    return (
+        <div>
+            <AppHeader/>
+            <SearchPanel/>
+            <TodoList />
+        </div>
+    )
+};
 
-ReactDOM.render(el,
+ReactDOM.render(<App />,
     document.getElementById('root'));
